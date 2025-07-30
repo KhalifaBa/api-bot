@@ -40,3 +40,5 @@ app.get("/action", (request, response) => {
    
    response.send(bot);
 });
+
+module.exports = app;

@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,14 +18,20 @@
   "bugs": {
     "url": "https://github.com/KhalifaBa/api-bot/issues"
   },
-  "scripts": {
-    "start": "node server.js",
-    "test": "jest"
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "homepage": "https://github.com/KhalifaBa/api-bot#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "jest": "^30.0.5"
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4"
   }
 }
