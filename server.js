@@ -14,10 +14,20 @@ app.listen(PORT, () => {
   console.log("Serveur sur écoute :", PORT);
 });
 
+    let itemBot = {
+    "bombs": 3,
+    "points" : 0,
+    }
 app.get("/action", (request, response) => {
+
     const randomMove = Math.floor(Math.random() * move.length);
     const randomAction = Math.floor(Math.random() * action.length);
-
+    if (randomAction === 0 && itemBot.bombs > 0) {
+        itemBot.bombs--;
+        if (itemBot.bombs === 0){
+            action[randomAction] = "NONE";
+        }
+    }
    const bot = {
       "move": move[randomMove],
       "action": action[randomAction]

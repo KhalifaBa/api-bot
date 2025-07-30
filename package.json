@@ -17,6 +17,10 @@
   "bugs": {
     "url": "https://github.com/KhalifaBa/api-bot/issues"
   },
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
   "homepage": "https://github.com/KhalifaBa/api-bot#readme",
   "dependencies": {
     "cors": "^2.8.5",
