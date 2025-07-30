@@ -1,5 +1,5 @@
 const supertest = require("supertest");
-const { describe, it, expect, jest } = require("@jest/globals");
+const { describe, it, expect } = require("@jest/globals");
 const app = require("./server");
 
 jest.setTimeout(70 * 100)
