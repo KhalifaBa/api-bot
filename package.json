@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/KhalifaBa/api-bot#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "jest": "^30.0.5"
   }
