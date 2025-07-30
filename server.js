@@ -24,7 +24,7 @@ app.get("/action", (request, response) => {
     const randomAction = Math.floor(Math.random() * action.length);
     if (randomAction === 0) {
         itemBot.bombs--;
-        if (itemBot.bombs === 0){
+        if (itemBot.bombs < 1){
             action[randomAction] = "NONE";
         }
     }
