@@ -14,8 +14,8 @@ describe("GET /action", () => {
             expect(response.body).toHaveProperty("action");
             expect(response.body).toHaveProperty("move");
             if(response.body.action === "BOMB") {
-                expect(itemBot.bombs).toBeLessThan(3);
                 itemBot.bombs--;
+                expect(itemBot.bombs).toBeLessThan(3);
             }
         });
 
