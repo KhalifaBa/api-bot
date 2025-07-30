@@ -18,8 +18,8 @@ app.listen(PORT, () => {
 
 app.get("/action", (request, response) => {
    const bot = {
-      "move": randomMove,
-      "action": randomAction
+      "move": move[randomMove],
+      "action": action[randomAction]
    };
    
    response.send(bot);
