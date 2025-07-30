@@ -19,18 +19,23 @@ app.listen(PORT, () => {
     "points" : 0,
     }
 app.get("/action", (request, response) => {
-
-    const randomMove = Math.floor(Math.random() * move.length);
-    const randomAction = Math.floor(Math.random() * action.length);
-    if (randomAction === 0) {
-        itemBot.bombs--;
-        if (itemBot.bombs < 1){
-            action[randomAction] = "NONE";
+    let selectedAction = "NONE";
+    if (itemBot.bombs < 1) {
+        const filteredActions = action.filter(act => act !== "BOMB");
+        const randomAction = Math.floor(Math.random() * filteredActions.length);
+        selectedAction = filteredActions[randomAction];
+    } else {
+        const randomAction = Math.floor(Math.random() * action.length);
+        selectedAction = action[randomAction];
+        if (selectedAction === "BOMB") {
+            itemBot.bombs--;
         }
     }
+    const randomMove = Math.floor(Math.random() * move.length);
+    let selectedMove = move[randomMove];
    const bot = {
-      "move": move[randomMove],
-      "action": action[randomAction]
+      "move": selectedMove,
+      "action": selectedAction
    };
    
    response.send(bot);
