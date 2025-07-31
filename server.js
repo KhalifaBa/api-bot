@@ -15,8 +15,7 @@ app.listen(PORT, () => {
 });
 
     let itemBot = {
-    "bombs": 3,
-    "points" : 0,
+    "bombs": 3
     }
 app.get("/action", (request, response) => {
     let selectedAction = "NONE";

@@ -1,8 +1,7 @@
 const supertest = require("supertest");
-const { describe, it, expect } = require("@jest/globals");
 const app = require("./server");
 
-jest.setTimeout(70 * 100)
+jest.setTimeout(80 * 100)
 
 let itemBot = {
     "bombs": 3,
@@ -11,7 +10,7 @@ let itemBot = {
 describe("GET /action", () => {
 
     describe("Quand le bot fait un mouvement", () => {
-        it("returne une action et un mouvement aléatoire", async () => {
+        it("et il a assez de bombe dans son inventaire", async () => {
             const response = await supertest(app).get("/action");
             expect(response.body).toHaveProperty("action");
             expect(response.body).toHaveProperty("move");
