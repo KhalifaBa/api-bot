@@ -7,7 +7,7 @@ app.use(cors({  origin: '*'}))
 const PORT = process.env.PORT || 3000;
 
 const move = ["UP", "DOWN", "LEFT", "RIGHT", "STAY"];
-const action = ["BOMB", "COLLECT","ATTACK", "NONE"];
+const action = ["BOMB", "COLLECT"];
 
 
 app.listen(PORT, () => {
@@ -18,7 +18,7 @@ app.listen(PORT, () => {
     "bombs": 3
     }
 app.get("/action", (request, response) => {
-    let selectedAction = "NONE";
+    let selectedAction = action[1];
     if (itemBot.bombs < 1) {
         const filteredActions = action.filter(act => act !== "BOMB");
         const randomAction = Math.floor(Math.random() * filteredActions.length);

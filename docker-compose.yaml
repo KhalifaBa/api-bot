@@ -1,0 +1,17 @@
+
+services:
+    server:
+
+      container_name: api-botwar
+
+      build: ./
+
+      ports:
+        - "3000:3000"
+
+      networks:
+        - api-simple
+
+networks:
+  api-simple:
+    driver: bridge        
